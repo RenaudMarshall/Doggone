@@ -15,4 +15,10 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0);
 	}
+
+	/*private void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "ThingToGet") {
+			Debug.Log("got the thing");
+		}	
+	}*/
 }
