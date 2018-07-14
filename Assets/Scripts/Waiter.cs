@@ -21,10 +21,6 @@ public class Waiter : Human {
     
     public float GrabRange;
     public float DetectionAngle;
-    public SpriteRenderer faceSprite;
-    public Color detectedColor;
-    public Color suspicousColor;
-    public Color normalColor;
 
     FoodOrder CarriedOrder;
 
@@ -59,15 +55,12 @@ public class Waiter : Human {
         {
             case WaiterTask.ChaseDog:
                 ChaseDog();
-                faceSprite.color = detectedColor;
                 break;
             case WaiterTask.PartolForDog:
                 PatrolForDog();
-                faceSprite.color = suspicousColor;
                 break;
             default:
                 DoWork();
-                faceSprite.color = normalColor;
                 break;
         }
 	}
@@ -311,16 +304,6 @@ public class Waiter : Human {
         this.CarriedOrder = null;
     }
 
-    public void DetectDogAt(Vector3 pos)
-    {
-        if (this.currentTask != WaiterTask.ChaseDog && this.currentTask != WaiterTask.PartolForDog)
-        {
-            this.tabledTask = this.currentTask;
-        }
-        this.currentTask = WaiterTask.ChaseDog;
-        this.LastKnownDogLocation = pos;
-        this.ChaseCoolDown = DogSearchTime;
-    }
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -332,7 +315,11 @@ public class Waiter : Human {
             {
                 if (!dog.IsUnderTable())
                 {
-                    DetectDogAt(other.transform.position);
+                    if (this.currentTask != WaiterTask.ChaseDog && this.currentTask != WaiterTask.PartolForDog)
+                        this.tabledTask = this.currentTask;
+                    this.currentTask = WaiterTask.ChaseDog;
+                    this.LastKnownDogLocation = other.transform.position;
+                    this.ChaseCoolDown = DogSearchTime;
                 }else if(this.DogSearchTime - this.ChaseCoolDown < 0.1F * this.DogSearchTime)
                 {
                     //Check Table
