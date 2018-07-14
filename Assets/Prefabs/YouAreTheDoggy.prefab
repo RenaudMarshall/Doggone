@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4722451252052922}
   - component: {fileID: 212847834460303870}
-  - component: {fileID: 114822853833052428}
   - component: {fileID: 61191513071079934}
   - component: {fileID: 50073162710659972}
+  - component: {fileID: 114698059162508466}
   m_Layer: 0
   m_Name: YouAreTheDoggy
   m_TagString: Player
@@ -36,7 +36,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1739858708147656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9403634, y: 0.8234346}
   m_EdgeRadius: 0
---- !u!114 &114822853833052428
+--- !u!114 &114698059162508466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
