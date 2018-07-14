@@ -27,4 +27,14 @@ public class FoodOrder {
         this.Size = size;
         this.forTable = t;
     }
+
+    public void DoWork(float work)
+    {
+        this.progress += work;
+    }
+
+    public bool IsDone()
+    {
+        return this.progress > this.Size;
+    }
 }

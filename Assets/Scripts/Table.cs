@@ -5,8 +5,7 @@ using UnityEngine;
 public class Table : WaiterInteractable {
 
     public Chair[] Chairs;
-
-    public FoodOrder Order;
+   
 	// Use this for initialization
 	void Start () {
         Order = new FoodOrder(10, this);

@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Waiter : MonoBehaviour {
 
     public Animator head;
     public Animator body;
+
+    private NavMeshAgent meshAgent;
     
     public float GrabRange;
     public float DetectionAngle;
@@ -23,17 +26,23 @@ public class Waiter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         LookingDirection = 0;
-	}
+
+        this.meshAgent = GetComponent<NavMeshAgent>();
+        this.meshAgent.updateRotation = false;
+        meshAgent.speed = Speed;
+        MoveTo(TablesUnderDuty[0].WaiterStandingPosition.transform.position);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        MoveTo(TablesUnderDuty[0].WaiterStandingPosition.transform.position);
+        LookAt(this.meshAgent.steeringTarget);
 	}
 
     private void MoveTo(Vector2 loc)
     {
-        LookAt(loc);
-        this.transform.position = Vector2.MoveTowards(this.transform.position, loc, Speed * Time.deltaTime);
+        // LookAt(loc);
+        //this.transform.position = Vector2.MoveTowards(this.transform.position, loc, Speed * Time.deltaTime);
+        this.meshAgent.destination = loc;
     }
 
 

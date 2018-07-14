@@ -5,6 +5,8 @@ using UnityEngine;
 public class WaiterInteractable : MonoBehaviour {
 
     public GameObject WaiterStandingPosition;
+
+    public FoodOrder Order;
     // Use this for initialization
     void Start () {
 		
