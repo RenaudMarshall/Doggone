@@ -15,4 +15,9 @@ public class GameController : MonoBehaviour {
         TotalPoints += add;
         Debug.Log(TotalPoints);
     }
+
+    private void DetectionStatus()
+    {
+        // to set the game music
+    }
 }
