@@ -1,24 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
 
-	public float speed = 7.0f;
+    public float speed = 7.0f;
+    private string sceneToGoTo = "GameOver";
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0);
-	}
+    void Update()
+    {
+        gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0);
 
-	/*private void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "ThingToGet") {
-			Debug.Log("got the thing");
-		}	
-	}*/
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            sceneToGoTo = "MainMenu";
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(sceneToGoTo);
+    }
 }
