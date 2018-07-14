@@ -157,6 +157,11 @@ Prefab:
       propertyPath: AreaBounds
       value: 
       objectReference: {fileID: 1092467606}
+    - target: {fileID: 61191513071079934, guid: fa20390809542004fbf1c0ab53caa956,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa20390809542004fbf1c0ab53caa956, type: 2}
   m_IsPrefabAsset: 0
