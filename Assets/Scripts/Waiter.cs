@@ -9,6 +9,15 @@ public class Waiter : MonoBehaviour {
     
     public float GrabRange;
     public float DetectionAngle;
+    public float Speed;
+
+    FoodOrder CarriedOrder;
+
+    public GameObject Kitchen;
+    public GameObject Register;
+
+    public Table[] TablesUnderDuty;
+    int activeTable = 0;
 
     private float _lookingDirection = 0;
 	// Use this for initialization
@@ -18,15 +27,22 @@ public class Waiter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //LookingDirection += 1F;
+        MoveTo(TablesUnderDuty[0].WaiterStandingPosition.transform.position);
 	}
 
-    private void LookAt(Vector3 loc)
+    private void MoveTo(Vector2 loc)
+    {
+        LookAt(loc);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, loc, Speed * Time.deltaTime);
+    }
+
+
+    private void LookAt(Vector2 loc)
     {
         LookingDirection = DirectionFrom(loc);
     }
 
-    private float DirectionFrom(Vector3 loc)
+    private float DirectionFrom(Vector2 loc)
     {
         return Mathf.Rad2Deg * Mathf.Atan2(loc.x - this.transform.position.x, loc.y - this.transform.position.y);
     }
@@ -53,7 +69,6 @@ public class Waiter : MonoBehaviour {
             float angleFromDetection = Mathf.Abs(Mathf.DeltaAngle(DirectionFrom(other.transform.position), this.LookingDirection));
             if (angleFromDetection < DetectionAngle)
             {
-                print("Player Detected");
                 LookAt(other.transform.position);
             }
         }

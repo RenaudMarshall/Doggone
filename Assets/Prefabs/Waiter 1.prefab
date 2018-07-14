@@ -188,9 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 95178560951527958}
   body: {fileID: 95178179148701588}
-  VisionRange: 20
   GrabRange: 1
-  DetectionAngle: 30
+  DetectionAngle: 20
 --- !u!212 &212314353964678244
 SpriteRenderer:
   m_ObjectHideFlags: 1
