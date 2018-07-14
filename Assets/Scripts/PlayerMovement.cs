@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             sceneToGoTo = "MainMenu";
-            Destroy(gameObject);
+            Defeat();
         }
     }
 
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = clampedPosition;
     }
 
-    private void OnDestroy()
+    public void Defeat()
     {
         SceneManager.LoadScene(sceneToGoTo);
     }

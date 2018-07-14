@@ -31,7 +31,7 @@ public class WaiterMovement : MonoBehaviour
         {
             Debug.Log("You got caught");
             target = null;
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<PlayerMovement>().Defeat();
         }
     }
 }
