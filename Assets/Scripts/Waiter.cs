@@ -113,7 +113,7 @@ public class Waiter : Human {
     {
         const int searchRadius = 20;
         if(Random.value < 0.01)
-            this.meshAgent.SetDestination(LastKnownDogLocation + Vector3.up * Random.value * searchRadius + Vector3.right * Random.value * searchRadius - new Vector3(searchRadius / 2, searchRadius / 2, 0));
+            this.meshAgent.SetDestination(Human.RandomVector(searchRadius, LastKnownDogLocation));
         LookAt(this.meshAgent.steeringTarget);
         this.SearchCoolDown -= Time.deltaTime;
         if (this.SearchCoolDown <= 0)

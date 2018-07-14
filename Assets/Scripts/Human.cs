@@ -53,4 +53,9 @@ public class Human : MonoBehaviour {
     {
         return Mathf.Rad2Deg * Mathf.Atan2(loc.x - this.transform.position.x, loc.y - this.transform.position.y);
     }
+
+    public static Vector3 RandomVector(float radius, Vector3 center)
+    {
+        return center + Quaternion.Euler(0, 0, 360 * Random.value) * new Vector3(1, 1, 0) * radius;
+    }
 }

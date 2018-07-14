@@ -7,10 +7,12 @@ public class Table : WaiterInteractable {
     public Chair[] Chairs;
     
     public Waiter ResponsibleWaiter;
+
+    public bool isTaken = false;
    
 	// Use this for initialization
 	void Start () {
-        Order = new FoodOrder(2, this);
+        //Order = new FoodOrder(2, this);
 	}
 	
 	// Update is called once per frame
