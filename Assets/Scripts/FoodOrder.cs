@@ -32,6 +32,18 @@ public class FoodOrder {
 
     public void DoWork(float work)
     {
+        switch (Status)
+        {
+            case OrderStatus.Food:
+                work *= 0.1F;
+                break;
+            case OrderStatus.Order:
+                work *= 0.5F;
+                break;
+            case OrderStatus.Check:
+                work *= 2F;
+                break;
+        }
         this.progress += work;
         if (this.IsDone())
             this.Advance();

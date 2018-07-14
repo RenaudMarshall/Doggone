@@ -23,7 +23,7 @@ public class Party : MonoBehaviour {
             for (int i = 0; i < PartyMemberSize; i++)
             {
                 PartyMembers[i] = Instantiate(GuestPrefab, this.transform);
-                PartyMembers[i].transform.position = Human.RandomVector(5, this.transform.position);
+                PartyMembers[i].transform.position = Human.RandomVector(1, this.transform.position);
             }
         }
     }
