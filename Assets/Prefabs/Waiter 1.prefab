@@ -221,9 +221,12 @@ MonoBehaviour:
   GrabRange: 1
   DetectionAngle: 20
   Speed: 3
-  Kitchen: {fileID: 0}
-  Register: {fileID: 0}
+  OwnKitchen: {fileID: 0}
+  OwnRegister: {fileID: 0}
   TablesUnderDuty:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!195 &195830447242590908
 NavMeshAgent:

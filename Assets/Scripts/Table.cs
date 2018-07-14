@@ -27,6 +27,11 @@ public class Table : WaiterInteractable {
         return this.Order != null && this.Order.Status == FoodOrder.OrderStatus.Idea;
     }
 
+    public bool IsReadyForCheck()
+    {
+        return this.Order != null && this.Order.Status == FoodOrder.OrderStatus.Check;
+    }
+
     public FoodOrder GetOrder()
     {
         FoodOrder order = this.Order;
