@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818514752570246}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 13.23, y: -4.91, z: 0}
+  m_LocalPosition: {x: -7.81, y: 2.67, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4588235897097764}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996777123016400}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4125788794420952}
@@ -218,11 +218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 95178560951527958}
   body: {fileID: 95178179148701588}
-  GrabRange: 1
-  DetectionAngle: 20
-  Speed: 3
+  Speed: 4
+  GrabRange: 2
+  DetectionAngle: 30
   OwnKitchen: {fileID: 0}
   OwnRegister: {fileID: 0}
+  DogSearchTime: 1
   TablesUnderDuty:
   - {fileID: 0}
   - {fileID: 0}

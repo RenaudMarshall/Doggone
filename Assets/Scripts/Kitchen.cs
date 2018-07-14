@@ -24,7 +24,6 @@ public class Kitchen : WaiterInteractable {
         }
         foreach (FoodOrder food in tmp)
         {
-            print("DONe");
             PrepOrders.Remove(food);
             DoneOrders.Add(food);
         }

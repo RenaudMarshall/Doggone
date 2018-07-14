@@ -39,7 +39,7 @@ public class Waiter : Human {
     private float SearchCoolDown;
 
     // Use this for initialization
-    void Start()
+    new void Start()
     {
         base.Start();
         foreach (Table t in this.TablesUnderDuty)
@@ -96,7 +96,11 @@ public class Waiter : Human {
     private void ChaseDog()
     {
         LookAt(LastKnownDogLocation);
-        this.meshAgent.SetDestination(LastKnownDogLocation);
+        if (Vector3.Distance(this.transform.position, LastKnownDogLocation) > 5)
+            this.meshAgent.SetDestination(LastKnownDogLocation);
+        else
+            this.MoveTo(LastKnownDogLocation);
+        
         this.ChaseCoolDown-= Time.deltaTime;
         if (this.ChaseCoolDown <= 0)
         {
@@ -109,7 +113,7 @@ public class Waiter : Human {
     {
         const int searchRadius = 20;
         if(Random.value < 0.01)
-            this.meshAgent.SetDestination(LastKnownDogLocation + Vector3.up * Random.value * 20 + Vector3.right * Random.value * 20 - new Vector3(20 / 2, 20 / 2, 0));
+            this.meshAgent.SetDestination(LastKnownDogLocation + Vector3.up * Random.value * searchRadius + Vector3.right * Random.value * searchRadius - new Vector3(searchRadius / 2, searchRadius / 2, 0));
         LookAt(this.meshAgent.steeringTarget);
         this.SearchCoolDown -= Time.deltaTime;
         if (this.SearchCoolDown <= 0)
@@ -201,7 +205,6 @@ public class Waiter : Human {
             this.OwnKitchen.DoneOrders.Remove(this.CarriedOrder);
             this.currentTask = WaiterTask.DeliverFood;
             this.currentTable = t;
-            print("Got fooood");
         }
     }
 
@@ -216,10 +219,16 @@ public class Waiter : Human {
             }
             else
             {
-                print("delivered fooood");
                 SetWorkerIdle();
             }
 
+        }
+        else
+        {
+            if(Random.value < 0.01)
+            {
+                //TODO Drop food
+            }
         }
     }
 
@@ -298,16 +307,27 @@ public class Waiter : Human {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        Doggy dog = other.gameObject.GetComponent<Doggy>();
+        if (dog != null)
         {
             float angleFromDetection = Mathf.Abs(Mathf.DeltaAngle(DirectionFrom(other.transform.position), this.LookingDirection));
             if (angleFromDetection < DetectionAngle)
             {
-                if(this.currentTask != WaiterTask.ChaseDog && this.currentTask != WaiterTask.PartolForDog)
-                    this.tabledTask = this.currentTask;
-                this.currentTask = WaiterTask.ChaseDog;
-                this.LastKnownDogLocation = other.transform.position;
-                this.ChaseCoolDown = DogSearchTime;
+                if (!dog.IsUnderTable())
+                {
+                    if (this.currentTask != WaiterTask.ChaseDog && this.currentTask != WaiterTask.PartolForDog)
+                        this.tabledTask = this.currentTask;
+                    this.currentTask = WaiterTask.ChaseDog;
+                    this.LastKnownDogLocation = other.transform.position;
+                    this.ChaseCoolDown = DogSearchTime;
+                }else if(this.DogSearchTime - this.ChaseCoolDown < 0.1F * this.DogSearchTime)
+                {
+                    //Check Table
+                }
+                if(this.currentTask == WaiterTask.ChaseDog && Vector3.Distance(dog.transform.position, this.transform.position) < this.GrabRange)
+                {
+                    Debug.Log("You got caught");
+                }
             }
         }
     }

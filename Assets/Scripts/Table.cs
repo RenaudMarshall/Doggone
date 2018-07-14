@@ -32,10 +32,21 @@ public class Table : WaiterInteractable {
         return this.Order != null && this.Order.Status == FoodOrder.OrderStatus.Check;
     }
 
-    public FoodOrder GetOrder()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        FoodOrder order = this.Order;
-        this.Order = null;
-        return Order;
+        Doggy dog = collision.gameObject.GetComponent<Doggy>();
+        if (dog != null)
+        {
+            dog.TableUnder = this;
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        Doggy dog = collision.gameObject.GetComponent<Doggy>();
+        if (dog != null)
+        {
+            if(dog.TableUnder == this)
+                dog.TableUnder = null;
+        }
     }
 }
