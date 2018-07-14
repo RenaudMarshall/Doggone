@@ -1076,7 +1076,7 @@ Prefab:
       propertyPath: m_Name
       value: table (1)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
+
     - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
         type: 2}
       propertyPath: Chairs.Array.data[0]
@@ -1095,8 +1095,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-=======
->>>>>>> 097efde075b54178a8dfcada9fb7ece4c01e5ddc
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b014430ffa979bc488bb283a4597c943, type: 2}
   m_IsPrefabAsset: 0

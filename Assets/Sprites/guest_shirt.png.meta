@@ -1,15 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 7fb070e735ffb20438e02172b4589954
-TextureImporter:
-  fileIDToRecycleName: {}
-=======
 guid: 2b7858c196a4f9041bde0f9d6f5a4949
 TextureImporter:
   fileIDToRecycleName:
     21300000: guest_shirt_0
     21300002: guest_shirt_1
->>>>>>> 097efde075b54178a8dfcada9fb7ece4c01e5ddc
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -39,33 +33,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
     filterMode: -1
-=======
-    filterMode: 0
->>>>>>> 097efde075b54178a8dfcada9fb7ece4c01e5ddc
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
-  spriteMode: 1
-=======
   spriteMode: 2
->>>>>>> 097efde075b54178a8dfcada9fb7ece4c01e5ddc
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 32
->>>>>>> 097efde075b54178a8dfcada9fb7ece4c01e5ddc
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -89,15 +71,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: 6451b3d50a8734b4d8abfa175ab4928f
-=======
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -138,7 +111,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 763159054494b334ea7a9fdb8ca8223e
+      spriteID: 175fd332e10a4d04ba0e657e8f9ee5ed
       vertices: []
       indices: 
       edges: []
@@ -158,7 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e91ad7964797a646ae8fea4f80d62fc
+      spriteID: 3cb7d17b81bd9c5439c4e84ea4f94ced
       vertices: []
       indices: 
       edges: []
@@ -166,8 +139,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7f9a2fb337dd5cb48b6644b2e618bfb9
->>>>>>> 097efde075b54178a8dfcada9fb7ece4c01e5ddc
+    spriteID: 256e2f14230f0a648998da747fe5298e
     vertices: []
     indices: 
     edges: []
