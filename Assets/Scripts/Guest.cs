@@ -19,16 +19,12 @@ public class Guest : Human {
     {
         if (!IsLeaving)
         {
-            _isAtExit = false;
             GoToChair();
         }
         else
         {
-            _isAtChair = false;
             GoToExit();
         }
-        if(this.OwnChair)
-            this.OwnChair.IsSatIn = _isAtChair;
     }
 
     private void GoToExit()
@@ -65,8 +61,6 @@ public class Guest : Human {
             }
         }
     }
-
-
 
     public bool IsAtChair
     {
