@@ -5,15 +5,21 @@ using UnityEngine;
 public class Table : WaiterInteractable {
 
     public Chair[] Chairs;
+    
+    public Waiter ResponsibleWaiter;
    
 	// Use this for initialization
 	void Start () {
-        Order = new FoodOrder(10, this);
+        Order = new FoodOrder(2, this);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(this.Order != null)
+        {
+            if (this.Order.Status == FoodOrder.OrderStatus.Food)
+                this.Order.DoWork(Time.deltaTime);
+        }
 	}
 
     public bool HasOrder()

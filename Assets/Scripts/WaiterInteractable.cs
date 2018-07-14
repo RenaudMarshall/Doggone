@@ -16,4 +16,13 @@ public class WaiterInteractable : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public Vector3 GetStandingPosition()
+    {
+        return WaiterStandingPosition.transform.position;
+    }
+    public float GetStandingAngle()
+    {
+        return WaiterStandingPosition.transform.rotation.eulerAngles.z;
+    }
 }
