@@ -8,13 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 7.0f;
     public BoxCollider2D AreaBounds;
-    private BoxCollider2D PlayerBounds;
     private string sceneToGoTo = "GameOver";
 
-    private void Start()
-    {
-        PlayerBounds = GetComponent<BoxCollider2D>();
-    }
     void Update()
     {
 
@@ -30,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(PlayerBounds.size.x, AreaBounds.bounds.min.x, AreaBounds.bounds.max.x);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, AreaBounds.bounds.min.x, AreaBounds.bounds.max.x);
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, AreaBounds.bounds.min.y, AreaBounds.bounds.max.y);
 
         transform.position = clampedPosition;
