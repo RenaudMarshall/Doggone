@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, AreaBounds.bounds.min.x, AreaBounds.bounds.max.x);
-        clampedPosition.y = Mathf.Clamp(clampedPosition.y, AreaBounds.bounds.min.y, AreaBounds.bounds.max.y);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, AreaBounds.bounds.min.x + GetComponent<BoxCollider2D>().size.x, AreaBounds.bounds.max.x - GetComponent<BoxCollider2D>().size.x);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, AreaBounds.bounds.min.y + GetComponent<BoxCollider2D>().size.y, AreaBounds.bounds.max.y - GetComponent<BoxCollider2D>().size.y);
 
         transform.position = clampedPosition;
     }
