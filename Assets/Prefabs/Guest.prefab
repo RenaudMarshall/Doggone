@@ -184,6 +184,7 @@ MonoBehaviour:
   Speed: 5
   OwnChair: {fileID: 0}
   IsLeaving: 0
+  Exit: {fileID: 0}
 --- !u!195 &195938963169653282
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -192,7 +193,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1863051608364756}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
