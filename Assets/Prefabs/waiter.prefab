@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50952808230805500}
   - component: {fileID: 114523049489980894}
   m_Layer: 0
-  m_Name: manBlue_hold
+  m_Name: waiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
