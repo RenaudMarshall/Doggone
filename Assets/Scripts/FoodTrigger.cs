@@ -6,6 +6,8 @@ public class FoodTrigger : MonoBehaviour
 {
     private GameController gameController;
 
+    public int Points = 10;
+
     private void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -16,7 +18,7 @@ public class FoodTrigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("got the thing");
-            gameController.AddPoints(10);
+            gameController.AddPoints(Points);
             Destroy(gameObject);
         }
     }

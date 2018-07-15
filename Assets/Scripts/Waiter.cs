@@ -42,15 +42,20 @@ public class Waiter : Human {
     private float ChaseCoolDown;
     private float SearchCoolDown;
 
+    private static FoodIndex foods;
+
     // Use this for initialization
     new void Start()
     {
+        foods = GameObject.FindObjectOfType<FoodIndex>();
         base.Start();
         foreach (Table t in this.TablesUnderDuty)
         {
             t.ResponsibleWaiter = this;
         }
         //MoveTo(TablesUnderDuty[0].WaiterStandingPosition.transform.position);
+        Instantiate(foods.foods[3].gameObject, this.transform.position, Quaternion.Euler(0, 0, 0));
+        print("FOOD");
     }
 	
 	// Update is called once per frame
@@ -232,9 +237,26 @@ public class Waiter : Human {
         }
         else
         {
-            if(Random.value < 0.01)
+            //if(Random.value < 0.01)
             {
-                //TODO Drop food
+                float rand = 1;//Mathf.Pow(Random.value, 1 / this.CarriedOrder.Size * 3);
+                if (rand > 0.5)
+                {
+                    FoodTrigger toCreate = foods.foods[0];
+                    if (rand > 0.75)
+                    {
+                        if (rand < .9)
+                        {
+                            toCreate = foods.foods[1];
+                        }
+                        else if (rand < .98)
+                            toCreate = foods.foods[2];
+                        else
+                            toCreate = foods.foods[3];
+                    }
+                    Instantiate(toCreate, this.transform.position, Quaternion.Euler(0, 0, 0));
+                    print("FOOD");
+                }
             }
         }
     }
@@ -321,7 +343,33 @@ public class Waiter : Human {
         this.LastKnownDogLocation = pos;
         this.ChaseCoolDown = DogSearchTime;
     }
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("HIT");
+        if (this.CarriedOrder.Status == FoodOrder.OrderStatus.TransitFood)
+        {
+            float rand = Mathf.Pow(Random.value, 1 / this.CarriedOrder.Size * 3);
+            if (rand > 0.5)
+            {
+                Object toCreate = poptart;
+                if (rand > 0.75)
+                {
+                    if (rand < .9)
+                    {
+                        toCreate = eggs;
+                    }
+                    else if (rand < .98)
+                        toCreate = bacon;
+                    else
+                        toCreate = steak;
+                }
+                Instantiate(toCreate, this.transform.position, this.transform.rotation);
 
+            }
+        }
+    }
+    */
     void OnTriggerStay2D(Collider2D other)
     {
         Doggy dog = other.gameObject.GetComponent<Doggy>();
