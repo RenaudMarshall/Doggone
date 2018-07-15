@@ -423,10 +423,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1818514752570246, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_Name
-      value: Waiter 1 (1)
-      objectReference: {fileID: 0}
+    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
+        type: 2}
+      propertyPath: OwnKitchen
+      value: 
+      objectReference: {fileID: 880491215}
+    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
+        type: 2}
+      propertyPath: OwnRegister
+      value: 
+      objectReference: {fileID: 1480655086}
     - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
         type: 2}
       propertyPath: TablesUnderDuty.Array.data[0]
@@ -447,27 +453,9 @@ Prefab:
       propertyPath: TablesUnderDuty.Array.data[3]
       value: 
       objectReference: {fileID: 1660395229}
-    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
-        type: 2}
-      propertyPath: OwnKitchen
-      value: 
-      objectReference: {fileID: 880491215}
-    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
-        type: 2}
-      propertyPath: OwnRegister
-      value: 
-      objectReference: {fileID: 1480655086}
-    - target: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.50000024
+    - target: {fileID: 1818514752570246, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
+      propertyPath: m_Name
+      value: Waiter 1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
@@ -1817,6 +1805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ba4982cdedc8c48bda87a0fbaa73a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioStealth: {fileID: 8300000, guid: 025c8999b0a972c478d2add7702a1361, type: 3}
+  audioChase: {fileID: 8300000, guid: 7be6b25a0db2ba54eb931b747ea7242e, type: 3}
 --- !u!4 &1258317447
 Transform:
   m_ObjectHideFlags: 0
@@ -1839,9 +1829,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7080ec3a176381042b3c41c6658fca74, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.38
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
