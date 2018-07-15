@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FoodTrigger : MonoBehaviour
 {
-    private GameController gameController;
+    private static GameController gameController;
 
     public int Points = 10;
 
     private void Start()
     {
+        if(!gameController)
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
@@ -19,6 +20,7 @@ public class FoodTrigger : MonoBehaviour
         {
             Debug.Log("got the thing");
             gameController.AddPoints(Points);
+            gameController.PlayPickup();
             Destroy(gameObject);
         }
     }

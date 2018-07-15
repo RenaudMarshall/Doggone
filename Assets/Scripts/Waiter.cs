@@ -40,7 +40,7 @@ public class Waiter : Human {
     private WaiterTask tabledTask;
     private Table currentTable;
 
-    private GameController control;
+    private static GameController control;
 
     private Vector3 LastKnownDogLocation;
     private float ChaseCoolDown;
@@ -53,6 +53,7 @@ public class Waiter : Human {
     {
         if(!foods)
         foods = GameObject.FindObjectOfType<FoodIndex>();
+        if(!control)
         control = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         base.Start();
         TablesUnderDuty = TableSection.GetComponentsInChildren<Table>();
@@ -138,6 +139,7 @@ public class Waiter : Human {
         this.SearchCoolDown -= Time.deltaTime;
         if (this.SearchCoolDown <= 0)
         {
+            control.detectors--;
             this.currentTask = this.tabledTask;
         }
     }
@@ -328,6 +330,7 @@ public class Waiter : Human {
     {
         if (this.currentTask != WaiterTask.ChaseDog && this.currentTask != WaiterTask.PartolForDog)
         {
+            control.detectors++;
             this.tabledTask = this.currentTask;
         }
         this.currentTask = WaiterTask.ChaseDog;
@@ -378,7 +381,7 @@ public class Waiter : Human {
                 }
                 if(this.currentTask == WaiterTask.ChaseDog && Vector3.Distance(dog.transform.position, this.transform.position) < this.GrabRange)
                 {
-                    Debug.Log("You got caught");
+                    control.GameOver();
                 }
             }
         }
