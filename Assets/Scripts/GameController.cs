@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
     private int TotalPoints;
+    private string StealthStatus;
     private Canvas UserInterface;
 
     private void Awake() {
@@ -14,9 +15,15 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         TotalPoints = 0;
+        StealthStatus = "Hidden";
 	}
-	
-	public void AddPoints(int add)
+
+    private void Update()
+    {
+        DetectionStatus();
+    }
+
+    public void AddPoints(int add)
     {
         TotalPoints += add;
         Debug.Log(TotalPoints);
@@ -25,6 +32,6 @@ public class GameController : MonoBehaviour {
 
     private void DetectionStatus()
     {
-        // to set the game music
+        
     }
 }
