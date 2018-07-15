@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 95178560951527958}
   body: {fileID: 95178179148701588}
-  Speed: 10
+  Speed: 4
   GrabRange: 2
   DetectionAngle: 30
   faceSprite: {fileID: 212314353964678244}

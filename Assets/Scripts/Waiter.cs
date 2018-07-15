@@ -38,6 +38,8 @@ public class Waiter : Human {
     private WaiterTask tabledTask;
     private Table currentTable;
 
+    private GameController control;
+
     private Vector3 LastKnownDogLocation;
     private float ChaseCoolDown;
     private float SearchCoolDown;
@@ -45,6 +47,7 @@ public class Waiter : Human {
     // Use this for initialization
     new void Start()
     {
+        control = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         base.Start();
         foreach (Table t in this.TablesUnderDuty)
         {
@@ -58,6 +61,7 @@ public class Waiter : Human {
         switch (this.currentTask)
         {
             case WaiterTask.ChaseDog:
+                //control.DetectionStatus(1);
                 ChaseDog();
                 faceSprite.color = detectedColor;
                 break;
@@ -66,6 +70,7 @@ public class Waiter : Human {
                 faceSprite.color = suspicousColor;
                 break;
             default:
+                //control.DetectionStatus(0);
                 DoWork();
                 faceSprite.color = normalColor;
                 break;
