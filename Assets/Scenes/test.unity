@@ -1331,6 +1331,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1692643674}
     m_Modifications:
+    - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
+        type: 2}
+      propertyPath: Chairs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4133986673292252, guid: b014430ffa979bc488bb283a4597c943, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.3380673
@@ -1367,17 +1372,16 @@ Prefab:
       propertyPath: m_Name
       value: table (1)
       objectReference: {fileID: 0}
-
     - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
         type: 2}
       propertyPath: Chairs.Array.data[0]
       value: 
-      objectReference: {fileID: 947634478}
+      objectReference: {fileID: 0}
     - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
         type: 2}
       propertyPath: Chairs.Array.data[1]
       value: 
-      objectReference: {fileID: 352307244}
+      objectReference: {fileID: 0}
     - target: {fileID: 4195231693427090, guid: b014430ffa979bc488bb283a4597c943, type: 2}
       propertyPath: m_RootOrder
       value: 4
@@ -1591,7 +1595,7 @@ Prefab:
     - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
         type: 2}
       propertyPath: Speed
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
