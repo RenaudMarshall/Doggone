@@ -378,6 +378,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4133986673292252, guid: b014430ffa979bc488bb283a4597c943,
     type: 2}
   m_PrefabInternal: {fileID: 1658619468}
+--- !u!114 &167841219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114127708774335980, guid: b014430ffa979bc488bb283a4597c943,
+    type: 2}
+  m_PrefabInternal: {fileID: 1054697279}
+  m_Script: {fileID: 11500000, guid: b94c87e4bfd0e444dbde3883874344eb, type: 3}
 --- !u!114 &175643288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
@@ -1367,17 +1373,16 @@ Prefab:
       propertyPath: m_Name
       value: table (1)
       objectReference: {fileID: 0}
-
     - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
         type: 2}
       propertyPath: Chairs.Array.data[0]
       value: 
-      objectReference: {fileID: 947634478}
+      objectReference: {fileID: 167841219}
     - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
         type: 2}
       propertyPath: Chairs.Array.data[1]
       value: 
-      objectReference: {fileID: 352307244}
+      objectReference: {fileID: 2032692663}
     - target: {fileID: 4195231693427090, guid: b014430ffa979bc488bb283a4597c943, type: 2}
       propertyPath: m_RootOrder
       value: 4
@@ -1542,10 +1547,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1818514752570246, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_Name
-      value: Waiter 1 (2)
-      objectReference: {fileID: 0}
+    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
+        type: 2}
+      propertyPath: OwnKitchen
+      value: 
+      objectReference: {fileID: 880491215}
+    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
+        type: 2}
+      propertyPath: OwnRegister
+      value: 
+      objectReference: {fileID: 1480655086}
     - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
         type: 2}
       propertyPath: TablesUnderDuty.Array.data[0]
@@ -1566,32 +1577,9 @@ Prefab:
       propertyPath: TablesUnderDuty.Array.data[3]
       value: 
       objectReference: {fileID: 349399979}
-    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
-        type: 2}
-      propertyPath: OwnKitchen
-      value: 
-      objectReference: {fileID: 880491215}
-    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
-        type: 2}
-      propertyPath: OwnRegister
-      value: 
-      objectReference: {fileID: 1480655086}
-    - target: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.50000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
-        type: 2}
-      propertyPath: Speed
-      value: 10
+    - target: {fileID: 1818514752570246, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
+      propertyPath: m_Name
+      value: Waiter 1 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
@@ -2457,6 +2445,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 195938963169653282, guid: a0cf1e7b08d0cad4faceecbe0e525c05,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0cf1e7b08d0cad4faceecbe0e525c05, type: 2}
   m_IsPrefabAsset: 0
@@ -2470,6 +2463,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8,
     type: 2}
   m_PrefabInternal: {fileID: 637134120}
+--- !u!114 &2032692663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114746138588201956, guid: b014430ffa979bc488bb283a4597c943,
+    type: 2}
+  m_PrefabInternal: {fileID: 1054697279}
+  m_Script: {fileID: 11500000, guid: b94c87e4bfd0e444dbde3883874344eb, type: 3}
 --- !u!1001 &2054515117
 Prefab:
   m_ObjectHideFlags: 0
