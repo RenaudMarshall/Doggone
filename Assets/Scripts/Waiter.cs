@@ -18,7 +18,8 @@ public class Waiter : Human {
         PartolForDog
     }
 
-    
+
+    public float ChaseSpeed;
     public float GrabRange;
     public float DetectionAngle;
     public SpriteRenderer faceSprite;
@@ -33,7 +34,8 @@ public class Waiter : Human {
 
     public float DogSearchTime = 1;
 
-    public Table[] TablesUnderDuty;
+    public GameObject TableSection;
+    private Table[] TablesUnderDuty;
     private WaiterTask currentTask;
     private WaiterTask tabledTask;
     private Table currentTable;
@@ -47,15 +49,14 @@ public class Waiter : Human {
     // Use this for initialization
     new void Start()
     {
+        if(!foods)
         foods = GameObject.FindObjectOfType<FoodIndex>();
         base.Start();
+        TablesUnderDuty = TableSection.GetComponentsInChildren<Table>();
         foreach (Table t in this.TablesUnderDuty)
         {
             t.ResponsibleWaiter = this;
         }
-        //MoveTo(TablesUnderDuty[0].WaiterStandingPosition.transform.position);
-        Instantiate(foods.foods[3].gameObject, this.transform.position, Quaternion.Euler(0, 0, 0));
-        print("FOOD");
     }
 	
 	// Update is called once per frame
@@ -65,6 +66,7 @@ public class Waiter : Human {
             case WaiterTask.ChaseDog:
                 ChaseDog();
                 faceSprite.color = detectedColor;
+                this.meshAgent.speed = ChaseSpeed;
                 break;
             case WaiterTask.PartolForDog:
                 PatrolForDog();
@@ -73,6 +75,7 @@ public class Waiter : Human {
             default:
                 DoWork();
                 faceSprite.color = normalColor;
+                this.meshAgent.speed = Speed;
                 break;
         }
 	}
@@ -237,26 +240,9 @@ public class Waiter : Human {
         }
         else
         {
-            //if(Random.value < 0.01)
+            if(Random.value < 0.01)
             {
-                float rand = 1;//Mathf.Pow(Random.value, 1 / this.CarriedOrder.Size * 3);
-                if (rand > 0.5)
-                {
-                    FoodTrigger toCreate = foods.foods[0];
-                    if (rand > 0.75)
-                    {
-                        if (rand < .9)
-                        {
-                            toCreate = foods.foods[1];
-                        }
-                        else if (rand < .98)
-                            toCreate = foods.foods[2];
-                        else
-                            toCreate = foods.foods[3];
-                    }
-                    Instantiate(toCreate, this.transform.position, Quaternion.Euler(0, 0, 0));
-                    print("FOOD");
-                }
+                foods.GenerateRandomFoodAtLocation(this.transform.position, this.CarriedOrder.Size / 3);
             }
         }
     }

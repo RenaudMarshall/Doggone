@@ -3,28 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Table : WaiterInteractable {
-
+    [HideInInspector]
     public Chair[] Chairs;
     
     public Waiter ResponsibleWaiter;
+    public GameObject dinnerPlate;
 
     public bool isTaken = false;
 
     private BoxCollider2D _tableCollider;
-   
-	// Use this for initialization
-	void Start () {
+    private static FoodIndex foods;
+
+    // Use this for initialization
+    void Start ()
+    {
+        if (!foods)
+            foods = GameObject.FindObjectOfType<FoodIndex>();
         //Order = new FoodOrder(2, this);
         _tableCollider = GetComponent<BoxCollider2D>();
+        Chairs = GetComponentsInChildren<Chair>();
 
     }
 	
 	// Update is called once per frame
 	void Update () {
+        dinnerPlate.SetActive(false);
 		if(this.Order != null)
         {
             if (this.Order.Status == FoodOrder.OrderStatus.Food)
+            {
+                dinnerPlate.SetActive(true);
                 this.Order.DoWork(Time.deltaTime);
+
+                if (Random.value < 0.005)
+                {
+                    foods.GenerateRandomFoodAtLocation(Human.RandomVector(1, this.transform.position), this.Order.Size / 10);
+                }
+            }
         }
         if (OccupiedChairCount == this.Chairs.Length)
         {
@@ -65,6 +80,14 @@ public class Table : WaiterInteractable {
                     count++;
             return count;
         }
+    }
+
+    public Chair[] RandomChairs()
+    {
+        List <Chair> rngChairs = new List<Chair>(Chairs);
+        rngChairs.Sort((x,y) => (int)(Random.value*3) - 1);
+        return rngChairs.ToArray();
+        
     }
 
     public void OnTriggerStay2D(Collider2D collision)

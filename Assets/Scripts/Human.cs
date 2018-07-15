@@ -56,6 +56,6 @@ public class Human : MonoBehaviour {
 
     public static Vector3 RandomVector(float radius, Vector3 center)
     {
-        return center + Quaternion.Euler(0, 0, 360 * Random.value) * new Vector3(1, 1, 0) * radius;
+        return center + Quaternion.Euler(0, 0, 360 * Random.value) * new Vector3(1, 1, 0) * radius * Random.value;
     }
 }

@@ -85,8 +85,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818514752570246}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.27289724, y: 2.3878343, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 3.9773765, y: 1.264674, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 0.50000024}
   m_Children:
   - {fileID: 4588235897097764}
@@ -218,7 +218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 95178560951527958}
   body: {fileID: 95178179148701588}
-  Speed: 10
+  Speed: 4
+  ChaseSpeed: 8
   GrabRange: 2
   DetectionAngle: 30
   faceSprite: {fileID: 212314353964678244}

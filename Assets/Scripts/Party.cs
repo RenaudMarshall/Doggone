@@ -88,9 +88,10 @@ public class Party : MonoBehaviour {
 
     private void AssignChairs(Table t)
     {
+        Chair[] chairs = t.RandomChairs();
         for (int i = 0; i < PartyMembers.Length; i++)
         {
-            PartyMembers[i].OwnChair = t.Chairs[i];
+            PartyMembers[i].OwnChair = chairs[i];
         }
     }
     private void GetGuestsOut()

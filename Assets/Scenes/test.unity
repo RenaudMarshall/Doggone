@@ -378,12 +378,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4133986673292252, guid: b014430ffa979bc488bb283a4597c943,
     type: 2}
   m_PrefabInternal: {fileID: 1658619468}
---- !u!114 &167841219 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114127708774335980, guid: b014430ffa979bc488bb283a4597c943,
-    type: 2}
-  m_PrefabInternal: {fileID: 1054697279}
-  m_Script: {fileID: 11500000, guid: b94c87e4bfd0e444dbde3883874344eb, type: 3}
 --- !u!114 &175643288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
@@ -647,6 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513771848}
   - component: {fileID: 513771847}
+  - component: {fileID: 513771849}
   m_Layer: 0
   m_Name: PartyManager
   m_TagString: Untagged
@@ -681,6 +676,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513771849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 513771846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ecca5c821a8334aa8eb5f445133c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foods:
+  - {fileID: 114817296640967110, guid: 7900816fc39380f498dd3b45c3ccb663, type: 2}
+  - {fileID: 114807486962362296, guid: 2f9f29335b6aca54e9c0057af9159dcc, type: 2}
+  - {fileID: 114546820067745902, guid: 40fe35c2db82d1b41b505c6f1b8e911e, type: 2}
+  - {fileID: 114922701409949926, guid: a1169917982938f47a521569436f9ff4, type: 2}
 --- !u!1001 &533828967
 Prefab:
   m_ObjectHideFlags: 0
@@ -819,6 +830,16 @@ Prefab:
       propertyPath: TablesUnderDuty.Array.data[3]
       value: 
       objectReference: {fileID: 596482945}
+    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
+        type: 2}
+      propertyPath: Speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114190822744856452, guid: fde7b2d93a85bf0449a393fe72cae4b8,
+        type: 2}
+      propertyPath: ChaseSpeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fde7b2d93a85bf0449a393fe72cae4b8, type: 2}
   m_IsPrefabAsset: 0
@@ -1460,24 +1481,6 @@ Prefab:
     - target: {fileID: 1010067272692918, guid: b014430ffa979bc488bb283a4597c943, type: 2}
       propertyPath: m_Name
       value: table (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
-        type: 2}
-      propertyPath: Chairs.Array.data[0]
-      value: 
-      objectReference: {fileID: 167841219}
-    - target: {fileID: 114827823572436708, guid: b014430ffa979bc488bb283a4597c943,
-        type: 2}
-      propertyPath: Chairs.Array.data[1]
-      value: 
-      objectReference: {fileID: 2032692663}
-    - target: {fileID: 4195231693427090, guid: b014430ffa979bc488bb283a4597c943, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872753780546912, guid: b014430ffa979bc488bb283a4597c943, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b014430ffa979bc488bb283a4597c943, type: 2}
@@ -2647,12 +2650,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4104950769269418, guid: fde7b2d93a85bf0449a393fe72cae4b8,
     type: 2}
   m_PrefabInternal: {fileID: 637134120}
---- !u!114 &2032692663 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114746138588201956, guid: b014430ffa979bc488bb283a4597c943,
-    type: 2}
-  m_PrefabInternal: {fileID: 1054697279}
-  m_Script: {fileID: 11500000, guid: b94c87e4bfd0e444dbde3883874344eb, type: 3}
 --- !u!1001 &2054515117
 Prefab:
   m_ObjectHideFlags: 0

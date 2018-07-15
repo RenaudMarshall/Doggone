@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50534651613599598}
   - component: {fileID: 114817296640967110}
   m_Layer: 0
-  m_Name: thingToGet
+  m_Name: Poptart
   m_TagString: ThingToGet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91faea8705a30e7479a9268c2eeea57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Points: 10
 --- !u!212 &212074214274721970
 SpriteRenderer:
   m_ObjectHideFlags: 1
